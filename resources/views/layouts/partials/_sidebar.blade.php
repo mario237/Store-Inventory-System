@@ -10,7 +10,7 @@
                 <img src="{{ asset('admin/dist/img/online-shop.png') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{ config('app.name') }}</a>
+                <a href="{{ route('dashboard') }}" class="d-block">{{ config('app.name') }}</a>
             </div>
         </div>
 
@@ -22,9 +22,19 @@
 
                 <li class="nav-item">
                     <a href="{{ route('categories.index') }}" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                        <i class="nav-icon far fa-circle"></i>
                         <p>
                             Categories
+                        </p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="{{ route('brands.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-circle"></i>
+                        <p>
+                            Brands
                         </p>
                     </a>
                 </li>

@@ -32,7 +32,7 @@ class CategoriesController extends Controller
         toastr()->success('Category is created successfully!' , '', ['timeOut' => 1500]);
 
 
-        return back();
+        return redirect()->route('brands.index');
 
     }
 
