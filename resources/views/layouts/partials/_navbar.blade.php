@@ -5,39 +5,10 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
-        </li>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto align-items-center">
-        <!-- Navbar Search -->
-        <li class="nav-item">
-            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                <i class="fas fa-search"></i>
-            </a>
-            <div class="navbar-search-block">
-                <form class="form-inline">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                               aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-navbar" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </li>
-
 
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -46,7 +17,6 @@
         </li>
 
 
-        <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" style="padding: 0.3rem 1rem;" data-toggle="dropdown" href="#">
                 <img src="{{ asset('admin/dist/img/avatar.jpeg') }}" class="img-circle elevation-2"
@@ -56,7 +26,7 @@
                 <a href="#">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a class="nav-link text-danger" data-widget="logout" href="#" role="button"
+                        <a class="nav-link text-danger" data-widget="logout" role="button"
                            href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                            this.closest('form').submit();">
