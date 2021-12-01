@@ -30,5 +30,3 @@ Route::group(['middleware' => 'auth:sanctum' , 'prefix' => 'dashboard'] , functi
     Route::resource('sizes' , SizesController::class );
 
 });
-
-

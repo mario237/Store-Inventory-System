@@ -1,3 +1,4 @@
+<script src="{{ asset('js/app.js') }}"></script>
 
 <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/jquery-ui/jquery-ui.min.js') }}"></script>

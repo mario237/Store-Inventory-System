@@ -6,7 +6,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+<div class="wrapper" id="app">
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
