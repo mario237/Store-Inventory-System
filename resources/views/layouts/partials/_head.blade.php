@@ -32,4 +32,8 @@
 <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 
+<link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+
+
+
 @stack('css')

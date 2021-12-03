@@ -20,7 +20,7 @@
     @include('layouts.partials._sidebar')
 
 
-    <div class="content-wrapper">
+    <div  id="app" class="content-wrapper">
 
         @yield('content')
 
