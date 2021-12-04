@@ -37994,16 +37994,24 @@ var render = function () {
             [
               _c("label", [_vm._v("Category")]),
               _vm._v(" "),
-              _c("Select2", {
-                attrs: { options: _vm.categories },
-                model: {
-                  value: _vm.form.category_id,
-                  callback: function ($$v) {
-                    _vm.$set(_vm.form, "category_id", $$v)
+              _c(
+                "Select2",
+                {
+                  attrs: { options: _vm.categories },
+                  model: {
+                    value: _vm.form.category_id,
+                    callback: function ($$v) {
+                      _vm.$set(_vm.form, "category_id", $$v)
+                    },
+                    expression: "form.category_id",
                   },
-                  expression: "form.category_id",
                 },
-              }),
+                [
+                  _c("option", { attrs: { disabled: "", value: "0" } }, [
+                    _vm._v("Select one"),
+                  ]),
+                ]
+              ),
             ],
             1
           ),

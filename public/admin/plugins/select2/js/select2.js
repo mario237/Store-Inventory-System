@@ -4472,10 +4472,9 @@ S2.define('select2/dropdown/attachBody',[
   AttachBody.prototype._positionDropdown = function () {
     var $window = $(window);
 
-    var isCurrentlyAbove = this.$dropdown.hasClass('select2-dropdown--above');
     var isCurrentlyBelow = this.$dropdown.hasClass('select2-dropdown--below');
 
-    var newDirection = null;
+    var newDirection = 'below';
 
     var offset = this.$container.offset();
 
@@ -4529,22 +4528,13 @@ S2.define('select2/dropdown/attachBody',[
     css.top -= parentOffset.top;
     css.left -= parentOffset.left;
 
-    if (!isCurrentlyAbove && !isCurrentlyBelow) {
-      newDirection = 'below';
-    }
 
-    if (!enoughRoomBelow && enoughRoomAbove && !isCurrentlyAbove) {
-      newDirection = 'above';
-    } else if (!enoughRoomAbove && enoughRoomBelow && isCurrentlyAbove) {
-      newDirection = 'below';
-    }
 
-    if (newDirection == 'above' ||
-      (isCurrentlyAbove && newDirection !== 'below')) {
+    if (newDirection === 'above' ){
       css.top = container.top - parentOffset.top - dropdown.height;
     }
 
-    if (newDirection != null) {
+    if (true) {
       this.$dropdown
         .removeClass('select2-dropdown--below select2-dropdown--above')
         .addClass('select2-dropdown--' + newDirection);

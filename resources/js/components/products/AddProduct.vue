@@ -8,8 +8,8 @@
                     <div class="form-group">
                         <label>Category</label>
 
-                        <Select2 v-model="form.category_id" :options="categories" >
-
+                        <Select2 v-model="form.category_id" :options="categories">
+                            <option disabled value="0">Select one</option>
                         </Select2>
 
                     </div>
