@@ -6,10 +6,11 @@
             <form role="form" action="" method="post">
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input name="name" type="text" class="form-control" id="name"
-                               placeholder="Enter product name">
+                        <label>Category</label>
 
+                        <Select2 v-model="form.category_id" :options="categories" >
+
+                        </Select2>
 
                     </div>
 
@@ -25,8 +26,30 @@
 </template>
 
 <script>
+import store from "../../store";
+import * as actions from "../../store/action-types";
+import {mapGetters} from "vuex";
+import Select2 from 'v-select2-component';
+
 export default {
-    name: "AddProduct"
+    components: {Select2},
+    data(){
+        return{
+            form:{
+                category_id : 1
+            }
+        }
+    },
+    computed: {
+        ...mapGetters({
+            'categories': 'getCategories'
+        })
+},
+mounted()
+{
+    store.dispatch(actions.GET_CATEGORIES)
+}
+
 }
 </script>
 

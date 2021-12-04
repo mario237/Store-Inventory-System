@@ -37,3 +37,7 @@ Route::group(['middleware' => 'auth:sanctum' , 'prefix' => 'dashboard'] , functi
     Route::resource('products' , ProductsController::class );
 
 });
+
+
+
+Route::get('/api/categories' , [CategoriesController::class , 'getCategoriesJson']);

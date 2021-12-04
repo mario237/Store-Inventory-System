@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class CategoriesController extends Controller
 {
@@ -31,7 +33,7 @@ class CategoriesController extends Controller
         toastr()->success('Category is created successfully!' , '', ['timeOut' => 1500]);
 
 
-        return redirect()->route('brands.index');
+        return redirect()->route('categories.index');
 
     }
 
@@ -61,5 +63,16 @@ class CategoriesController extends Controller
         toastr()->success('Category is deleted successfully!' , '', ['timeOut' => 1500]);
 
         return redirect()->route('categories.index');
+    }
+
+    //HANDLE AJAX REQUEST
+    public function getCategoriesJson(): JsonResponse
+    {
+        $categories = Category::all();
+
+        return response()->json([
+           'success' => true,
+            'data' => $categories
+        ], ResponseAlias::HTTP_OK);
     }
 }
