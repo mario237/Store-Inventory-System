@@ -7,18 +7,22 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label>Category</label>
+                        <Select2 v-model="form.category_id" :options="categories"></Select2>
+                    </div>
 
-                        <Select2 v-model="form.category_id" :options="categories">
-                            <option disabled value="0">Select one</option>
-                        </Select2>
-
+                    <div class="form-group">
+                        <label>Band</label>
+                        <Select2 v-model="form.brand_id" :options="brands"></Select2>
                     </div>
 
                 </div>
                 <!-- /.card-body -->
 
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="card-footer" style="background-color: transparent !important;">
+                    <button type="submit" class="btn btn-primary">
+                        <span> <i class="fa fa-save"></i></span>
+                        <span>Submit</span>
+                    </button>
                 </div>
             </form>
         </div>
@@ -33,22 +37,27 @@ import Select2 from 'v-select2-component';
 
 export default {
     components: {Select2},
-    data(){
-        return{
-            form:{
-                category_id : 1
+    data() {
+        return {
+            form: {
+                category_id: 1,
+                brand_id: 1
             }
         }
     },
     computed: {
         ...mapGetters({
-            'categories': 'getCategories'
+            'categories': 'getCategories',
+            'brands': 'getBrands'
         })
-},
-mounted()
-{
-    store.dispatch(actions.GET_CATEGORIES)
-}
+    },
+    mounted() {
+        //Get Categories
+        store.dispatch(actions.GET_CATEGORIES)
+
+        //Get Brands
+        store.dispatch(actions.GET_BRANDS)
+    }
 
 }
 </script>

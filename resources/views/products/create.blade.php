@@ -27,7 +27,7 @@
     <div class="contents">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-12">
                    <add-product></add-product>
                 </div>
 

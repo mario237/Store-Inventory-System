@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->decimal('retail_price' , 8 , 2);
             $table->string('year' , 4);
             $table->string('description');
-            $table->boolean(Product::STATUS_ACTIVE);
+            $table->boolean('status')->default(Product::STATUS_ACTIVE);
 
             $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('category_id')->nullable()->constrained()->nullOnDelete();

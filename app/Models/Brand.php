@@ -13,4 +13,10 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     protected $fillable = ['name'];
+
+    protected $appends = ['text'];
+
+    public function getTextAttribute(){
+        return $this->name;
+    }
 }

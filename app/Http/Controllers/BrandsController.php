@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BrandRequest;
 use App\Models\Brand;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class BrandsController extends Controller
 {
@@ -60,5 +62,16 @@ class BrandsController extends Controller
         toastr()->success('Brand is deleted successfully!' , '', ['timeOut' => 1500]);
 
         return redirect()->route('brands.index');
+    }
+
+    //HANDLE AJAX REQUEST
+    public function getBrandsJson(): JsonResponse
+    {
+        $brands = Brand::all();
+
+        return response()->json([
+            'success' => true,
+            'data' => $brands
+        ], ResponseAlias::HTTP_OK);
     }
 }
