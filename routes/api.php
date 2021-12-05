@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\SizesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::get('/categories' , [CategoriesController::class , 'getCategoriesJson']);
 //GET ALL BRANDS
 Route::get('/brands' , [BrandsController::class , 'getBrandsJson']);
 
+//GET ALL SIZES
+Route::get('/sizes' , [SizesController::class , 'getSizesJson']);

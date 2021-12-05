@@ -24,13 +24,10 @@
     </div>
     <!-- /.content-header -->
 
-    <div class="contents">
+    <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
-                   <add-product></add-product>
-                </div>
-
+                <add-product></add-product>
             </div>
 
         </div>

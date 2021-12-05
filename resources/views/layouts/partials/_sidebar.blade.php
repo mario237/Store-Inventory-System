@@ -22,7 +22,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('categories.index') }}" class="nav-link">
-                        <i class="nav-icon fa fa-bars"></i>
+                       <img class="sidebar-icon" src="{{ asset('admin/dist/img/categories.png') }}" alt="">
                         <p>
                             Categories
                         </p>
@@ -32,7 +32,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('brands.index') }}" class="nav-link">
-                        <i class="nav-icon fa fa-bars"></i>
+                        <img class="sidebar-icon" src="{{ asset('admin/dist/img/brand.png') }}" alt="">
                         <p>
                             Brands
                         </p>
@@ -42,7 +42,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('sizes.index') }}" class="nav-link">
-                        <i class="nav-icon fa fa-bars"></i>
+                        <img class="sidebar-icon" src="{{ asset('admin/dist/img/size.png') }}" alt="">
                         <p>
                             Sizes
                         </p>
@@ -52,7 +52,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('products.index') }}" class="nav-link">
-                        <i class="nav-icon fa fa-bars"></i>
+                        <img class="sidebar-icon" src="{{ asset('admin/dist/img/products.png') }}" alt="">
                         <p>
                             Products
                         </p>

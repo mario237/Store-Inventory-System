@@ -1,7 +1,17 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/*@import 'tailwindcss/base';*/
+/*@import 'tailwindcss/components';*/
+/*@import 'tailwindcss/utilities';*/
 
+.sidebar-icon{
+    width: 25px;
+    height: 25px;
+    margin-right:10px;
+}
+
+
+.select2-container{
+    display: block !important;
+}
 .select2-container .select2-selection--single {
     display: flex !important;
     align-items: center;

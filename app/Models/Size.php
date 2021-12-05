@@ -13,4 +13,10 @@ use Illuminate\Database\Eloquent\Model;
 class Size extends Model
 {
     protected $fillable = ['size'];
+
+    protected $appends = ['text'];
+
+    public function getTextAttribute(){
+        return $this->name;
+    }
 }

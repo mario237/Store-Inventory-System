@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SizeRequest;
 use App\Models\Size;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class SizesController extends Controller
 {
@@ -56,5 +58,16 @@ class SizesController extends Controller
         toastr()->success('Size is deleted successfully!' , '', ['timeOut' => 1500]);
 
         return redirect()->route('sizes.index');
+    }
+
+    //HANDLE AJAX REQUEST
+    public function getSizesJson(): JsonResponse
+    {
+        $sizes = Size::all();
+
+        return response()->json([
+            'success' => true,
+            'data' => $sizes
+        ], ResponseAlias::HTTP_OK);
     }
 }
