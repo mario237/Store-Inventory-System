@@ -7,9 +7,16 @@
     height: 150px;
 }
 
-.sidebar .nav-link{
+.sidebar .nav-link {
     display: flex !important;
     margin: 1rem 0;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.sidebar .nav-item:hover .nav-link{
+    color: #00a152 !important;
 }
 
 .login-container {

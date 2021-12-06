@@ -1,6 +1,5 @@
 @section('title' , 'Login Page')
 
-
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">

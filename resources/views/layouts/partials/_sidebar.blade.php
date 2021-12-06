@@ -1,19 +1,13 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar bg-gray-900 elevation-4">
 
 
     <!-- Sidebar -->
     <div class="sidebar">
 
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="{{ asset('admin/dist/img/online-shop.png') }}" class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-                <a href="{{ route('dashboard') }}" class="d-block">{{ config('app.name') }}</a>
-            </div>
+                <img src="{{ asset('admin/dist/img/online-shop.png') }}" class="img-circle elevation-2 ml-2" alt="Brand Image">
         </div>
-
 
 
         <!-- Sidebar Menu -->
@@ -22,7 +16,7 @@
 
                 <li class="nav-item d-flex">
                     <a href="{{ route('categories.index') }}" class="nav-link">
-                       <img class="sidebar-icon" src="{{ asset('admin/dist/img/categories.png') }}" alt="">
+                        <img class="sidebar-icon" src="{{ asset('admin/dist/img/categories.png') }}" alt="">
                         <p>
                             Categories
                         </p>
@@ -65,3 +59,4 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+
