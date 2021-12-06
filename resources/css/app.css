@@ -1,17 +1,33 @@
-/*@import 'tailwindcss/base';*/
-/*@import 'tailwindcss/components';*/
-/*@import 'tailwindcss/utilities';*/
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-.sidebar-icon{
-    width: 25px;
-    height: 25px;
-    margin-right:10px;
+.brand-logo {
+    width: 150px;
+    height: 150px;
+}
+
+.sidebar .nav-link{
+    display: flex !important;
+    margin: 1rem 0;
+}
+
+.login-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.sidebar-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 
-.select2-container{
+.select2-container {
     display: block !important;
 }
+
 .select2-container .select2-selection--single {
     display: flex !important;
     align-items: center;
@@ -19,11 +35,11 @@
 }
 
 
-.select2-container--default .select2-selection--single .select2-selection__rendered{
+.select2-container--default .select2-selection--single .select2-selection__rendered {
     margin-top: 0 !important;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow{
+.select2-container--default .select2-selection--single .select2-selection__arrow {
     top: 50% !important;
     transform: translateY(-50%);
 }

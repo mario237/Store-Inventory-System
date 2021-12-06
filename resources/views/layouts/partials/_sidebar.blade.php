@@ -20,7 +20,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                <li class="nav-item">
+                <li class="nav-item d-flex">
                     <a href="{{ route('categories.index') }}" class="nav-link">
                        <img class="sidebar-icon" src="{{ asset('admin/dist/img/categories.png') }}" alt="">
                         <p>

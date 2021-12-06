@@ -1,3 +1,6 @@
+@section('title' , 'Login Page')
+
+
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
@@ -33,11 +36,6 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
 
                 <x-jet-button class="ml-4">
                     {{ __('Log in') }}
