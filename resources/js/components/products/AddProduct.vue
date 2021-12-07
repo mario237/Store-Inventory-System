@@ -1,11 +1,12 @@
 <template>
+    <form @submit.prevent="submitForm" role="form" method="post">
+
     <div class="row w-100">
         <div class="col-sm-6">
             <div class="card card-primary card-outline">
                 <div class="card-body">
                     <h5 class="card-title">Create Product</h5> <br>
 
-                    <form role="form" action="" method="post">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Category <span class="text-danger">*</span></label>
@@ -31,7 +32,7 @@
 
                             <div class="form-group">
                                 <label>Image <span class="text-danger">*</span></label>
-                                <input type="file" v-on:change="form.image" class="form-control"
+                                <input @change="selectImage" type="file" class="form-control"
                                        placeholder="Product Image">
                             </div>
 
@@ -78,7 +79,6 @@
                                 <span>Submit</span>
                             </button>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -91,15 +91,19 @@
                     <br>
 
                     <div class="row my-4" v-for="(item , index) in form.items" :key="index">
-                      <div class="col-sm-4">
-                          <select class="form-control" v-model="item.size_id">
-`                              <option v-for="(size , index) in sizes" :key="index" value="size.id">{{ size.size }}</option>
-`                          </select>
+                        <div class="col-sm-4">
+                            <select class="form-control" v-model="item.size_id">
+                                <option value="0">Select Size</option>
+                                <option v-for="(size , index) in sizes" :key="index" :value="size.id">{{
+                                        size.size
+                                    }}
+                                </option>
+                            </select>
 
-                      </div>
+                        </div>
 
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" placeholder="Location" v-model="item.location">
+                            <input type="text" class="form-control py-2" placeholder="Location" v-model="item.location">
                         </div>
 
                         <div class="col-sm-3">
@@ -107,15 +111,16 @@
                         </div>
 
                         <div class="col-sm-2">
-                           <button class="btn btn-danger"> <i class="fa fa-trash"></i></button>
+                            <button @click="deleteItem(item.size_id)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                         </div>
                     </div>
-                    <button class="btn btn-primary"> <i class="fa fa-plus"></i> Add Item</button>
+                    <button @click="addItem" class="btn btn-primary"><i class="fa fa-plus"></i> Add Item</button>
 
                 </div>
             </div>
         </div>
     </div>
+        </form>
 </template>
 
 <script>
@@ -139,10 +144,10 @@ export default {
                 year: '',
                 description: '',
                 status: 1,
-                items:[{
-                    size_id: 1,
-                    location:'',
-                    quantity:0
+                items: [{
+                    size_id: 0,
+                    location: '',
+                    quantity: 0
                 }]
             }
         }
@@ -163,6 +168,38 @@ export default {
 
         //Get Sizes
         store.dispatch(actions.GET_SIZES)
+    },
+    methods: {
+        selectImage(e){
+           this.form.image =  e.target.files[0]
+        },
+        addItem() {
+            let item = {
+                size_id: 0,
+                location: '',
+                quantity: 0
+            }
+            this.form.items.push(item)
+        },
+        deleteItem(index){
+           this.form.items.splice(index , 1)
+        },
+        submitForm(){
+            let data = new FormData();
+            data.append('category_id' , this.form.category_id)
+            data.append('brand_id' , this.form.brand_id)
+            data.append('sku' , this.form.sku)
+            data.append('name' , this.form.name)
+            data.append('image' , this.form.image)
+            data.append('cost_price' , this.form.cost_price)
+            data.append('retail_price' , this.form.retail_price)
+            data.append('year' , this.form.year)
+            data.append('description' , this.form.description)
+            data.append('status' , this.form.status)
+            data.append('items' , this.form.items)
+
+            store.dispatch(actions.ADD_PRODUCT , data)
+        }
     }
 
 }

@@ -17,6 +17,6 @@ class Size extends Model
     protected $appends = ['text'];
 
     public function getTextAttribute(){
-        return $this->name;
+        return $this->size;
     }
 }

@@ -20,9 +20,10 @@ class ProductsController extends Controller
         return view('products.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request): array
     {
         //
+        return $request->all();
     }
 
     public function show(Product $product)

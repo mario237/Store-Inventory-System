@@ -3,7 +3,7 @@ import * as mutations from "../../mutation-types";
 import Axios from "axios";
 
 export default {
-    [actions.GET_CATEGORIES]({ commit }){
+    [actions.GET_SIZES]({ commit }){
         Axios.get('/api/sizes')
             .then(res =>{
                 if (res.data.success){
